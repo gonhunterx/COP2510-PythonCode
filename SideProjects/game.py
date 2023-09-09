@@ -1,3 +1,6 @@
+# Welcome to my Python CLI mini-game ^-^
+
+
 visited_cities = {}
 
 
@@ -102,6 +105,7 @@ if __name__ == "__main__":
     # CityOne = ["Hozen", "FarReach", "TumbleTown"]
     # CityTwo = ["BuckleBur", "SownCove", "Decelace"]
     # CityThree = ["Kyoni", "Lot22", "FarrowsEnclave"]
+    # Replace function and call names for cities and add vendors
 
     # once you choose one of the cities you then pick a town
     # once you've selected a town you then will meet various vendors which you can buy itsms
