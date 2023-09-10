@@ -43,7 +43,7 @@ def city_one(player_name, player_coins):
     )
 
     whatIsMyNameGuesser = input("What do you think my name is?: ")
-    if whatIsMyNameGuesser == {player_name}:
+    if whatIsMyNameGuesser == player_name:
         print("now you see.. here.. *tosses coin*")
         player_coins += 1
     else:
