@@ -1,18 +1,17 @@
 # Distance traveled calculator
 # distance = speed * time
 
-# accumulators
-miles_traveled = 0
-# Variables
 
+# Variables
 vehicle_speed = int(input("What is the vehicles speed(MPH)?: "))
 hours_traveled = int(input("How many hours did you travel?: "))
 
 
-def distanceTraveled():
+# function for calculating average speed per hour based on speed * time traveled
+def speedCalculator():
     for inital_hour in range(hours_traveled):
-        distance = vehicle_speed / hours_traveled
-        print(f"Hour {inital_hour+1}: Traveling at {distance} MPH")
+        speedPerHour = vehicle_speed / hours_traveled
+        print(f"Hour {inital_hour+1}: Traveling at {speedPerHour} MPH")
 
 
-distanceTraveled()
+speedCalculator()
