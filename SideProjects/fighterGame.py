@@ -22,6 +22,8 @@ def main():
                 player_coins, player_health = encounter_one(
                     player_health, player_name, player_coins
                 )
+            else:
+                print("you have already defeated the boss of this town.")
         elif choice == "2":
             print("Choice 2 selected")
             if "1" not in enemies_defeated:
@@ -59,6 +61,7 @@ def fireEnemy():
 # or else it will switch the order in the cli interface.
 def encounter_one(player_health, player_name, player_coins):
     # playerHealth = player_health
+
     print(
         f"~~~~~~~~~~~~~~ \n Health: {player_health} \n Player: {player_name} \n Coins: {player_coins} \n~~~~~~~~~~~~~~"
     )
@@ -84,6 +87,14 @@ def encounter_three(player_health, player_name, player_coins):
 #     enemy_name = "Zommet"
 #     enemy_health = 8
 
+
+# add in tier sets?
+# make it so you can build a house and upgrade it?
+# make it so that you can choose to fight the same boss again, but you get less exp
+# keep coins add exp
+#
+#
+# #
 
 if __name__ == "__main__":
     main()
