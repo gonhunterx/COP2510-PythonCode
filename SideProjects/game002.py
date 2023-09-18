@@ -81,6 +81,9 @@ def townOne(player):
 def main():
     print("Welcome to Greed Island")
     player_name = input("What is your name traveler?: ")
+    # this creates a new value for the variable player_name
+    # it is then passed as a parameter to the Player class and we reassign that entire
+    # value as 'player' for ease of use when calling specific
     player = Player(player_name)
 
     while True:
