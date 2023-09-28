@@ -7,6 +7,7 @@ gulf_data = []
 
 # main menu function
 def menu():
+    print("================")
     print("1. Enter Data")
     print("2. Read Data")
     print("3. Clear Data")
@@ -86,3 +87,13 @@ def main():
 
 # call the main function
 main()
+
+
+# LIST OF ADJUSTMENTS
+# - create an error catch for when there are two of the same name in the list.
+# -
+#
+#
+#
+#
+#
