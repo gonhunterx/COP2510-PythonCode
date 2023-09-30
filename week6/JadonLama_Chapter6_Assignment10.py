@@ -34,10 +34,10 @@ def menu():
 
 # function to clear the data.
 def clear_data():
-    # confrimation before actually just clearning all data
-    confrimation = input("Are you sure you want to delete all data?: (yes or no): ")
-    # if statement for result of confrimation
-    if confrimation.lower() == "yes":
+    # confirmation before actually just clearning all data
+    confirmation = input("Are you sure you want to delete all data?: (yes or no): ")
+    # if statement for result of confirmation
+    if confirmation.lower() == "yes":
         # try opening and writing over it (when the file is opened in "w" then closed
         # it truncates the existing content)
         try:
@@ -60,6 +60,9 @@ def clear_data():
 
 def edit_file():
     # using 'a' to append data to the file
+    # 'with' automatically handles opening and closing files so we use that
+    # creates a 'with' block that is self closing.
+    # This elminitates the need for a while or for loop in the functions.
     with open("gulf.txt", "a") as gulfscoresFile:
         # CREATING the player_name and gulf_score variables.
         player_name = input("What is the player's name?: ")
@@ -85,8 +88,11 @@ def edit_file():
 
 def read_file():
     print("Gulf Score Data:")
+    # using a try except statement here to see if the file already exists.
+    # using the try except statement so that incase something happens during the
+    # with open statements execution we can catch that
     try:
-        # 'with' automatically handles opening and closing files so we use that
+        # continuning to use the 'with open' statement because it is faster and safer
         with open("gulf.txt", "r") as gulfscoresFile:
             # iterating over each line in the gulf.txt file renamed as gulfscoresFile for ease of use
             # and creating the line var to represent each line in the txt
@@ -98,8 +104,11 @@ def read_file():
                 # printing each line
                 print(f"Player: {player_name}, Score: {gulf_score}")
     # creating a catch incase there is not a file already created
-    except FileNotFoundError:
-        print("No file found.")
+    except FileNotFoundError or Exception as e:
+        if FileNotFoundError:
+            print("No file found.")
+        elif Exception:
+            print(f"Exception: {e}")
     return menu()
 
 
