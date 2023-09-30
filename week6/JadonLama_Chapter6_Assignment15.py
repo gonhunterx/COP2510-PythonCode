@@ -4,6 +4,7 @@ import sys
 
 # creating a repeating menu for user ease.
 def menu():
+    print("==============")
     print("Main menu")
     # 3 options for the user.
     print("1. Calculate total of numbers.txt file.")
@@ -45,13 +46,17 @@ def total_of_numbers():
     try:
         # opening the file and assigning it as numbers_file
         with open("numbers.txt", "r") as numbers_file:
-            # itterating for each line in the file
+            # iterating for each line in the file
             accumulator = 0
+            # for loop to go through the file
             for line in numbers_file:
+                # convert the lines values to intigers
                 number = int(line)
+                # add the numbers to the accumulator
                 accumulator += number
-
+            # print the accumulators value after the loop completes
             print(f"The total is: {accumulator}")
+            # return to the menu
             menu()
     except Exception as e:
         print(f"Error: {e}")
