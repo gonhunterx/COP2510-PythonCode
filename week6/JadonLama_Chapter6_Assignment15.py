@@ -28,24 +28,33 @@ def menu():
 
 # reading all numbers in the file function
 def read_all_numbers():
-    # opening the file and assigning it as numbers_file
-    with open("numbers.txt", "r") as numbers_file:
-        # for loop to go through
-        for line in numbers_file:
-            print(line)
-        menu()
+    # try except statements for error handling
+    try:
+        # opening the file and assigning it as numbers_file
+        with open("numbers.txt", "r") as numbers_file:
+            # for loop to go through
+            for line in numbers_file:
+                print(line)
+            menu()
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 def total_of_numbers():
-    with open("numbers.txt", "r") as numbers_file:
-        # itterating for each line in the file
-        accumulator = 0
-        for line in numbers_file:
-            number = int(line)
-            accumulator += number
+    # try except statements for error handling
+    try:
+        # opening the file and assigning it as numbers_file
+        with open("numbers.txt", "r") as numbers_file:
+            # itterating for each line in the file
+            accumulator = 0
+            for line in numbers_file:
+                number = int(line)
+                accumulator += number
 
-        print(f"The total is: {accumulator}")
-        menu()
+            print(f"The total is: {accumulator}")
+            menu()
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 def main():
