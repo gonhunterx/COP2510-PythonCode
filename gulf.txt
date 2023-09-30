@@ -1,9 +1,2 @@
-havi, 4
-jadon, 55
-hadon, 44
-kanana , 49
-h49r, ajs
-random1, 42isja
-jadon, 44
-random4, 40
-random4, 40
+jadon, 4
+josh, 5
