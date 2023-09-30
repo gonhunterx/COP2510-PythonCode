@@ -33,7 +33,7 @@ def read_all_numbers():
     try:
         # opening the file and assigning it as numbers_file
         with open("numbers.txt", "r") as numbers_file:
-            # for loop to go through
+            # for loop to go through the file lines
             for line in numbers_file:
                 print(line)
             menu()
