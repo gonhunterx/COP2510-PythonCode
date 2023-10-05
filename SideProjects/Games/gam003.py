@@ -1,45 +1,99 @@
-#
 import sys
 
 
-def main_menu():
-    print("MAIN MENU")
-    print("1. Add to note card")
-    print("2. View note card")
-    print("3. Quit")
-    choice = input("1, 2, or 3: ")
-    if choice == "1":
-        add_to_notecard()
-    elif choice == "2":
-        pass
-    elif choice == "3":
+def intro_menu(player):
+    print("welcome to Nomata")
+    print("1. Start")
+    print("2. Quit")
+    intro_choice = input("Make a choice: ")
+    if intro_choice == "1":
+        main_menu(player)
+    elif intro_choice == "2":
         sys.exit()
     else:
-        print("Invalid entry.")
+        print("Invalid input.")
 
 
-# so lets say its like you create a 'notecard' and these
-# notecards can store a string of data.
-# 3 total note cards
-notecard2 = input("Note card 2 entry: ")
-notecard3 = input("Note card 3 entry: ")
+class Item:
+    def __init__(self, name, value):
+        self.name = name
+        self.value = value
 
 
-class Notecard:
-    def __init__(self, note_card_number, note_card_data):
-        self.note_card_number = note_card_number
-        self.note_card_data = note_card_data
-
-    def display_notecard(self):
-        print(self.note_card_number)
+# defining items to be collected with names and values to pass through class
+wood_log = Item("Wood Log", 4)
+wheat = Item("Wheat", 2)
+# first passed is name second is coin value
 
 
-added_notecards = {}
+def main_menu(player):
+    print("main menu:")
+    print("1. Go to farm")
+    print("2. Go to woods")
+    print("3. Go to the market")
+    print("4. Display stats/inv")
+    print("5. Quit")
+    choice = input("Input 1 - 5: ")
+    if choice == "1":
+        farm(player)
+    elif choice == "2":
+        woods(player)
+    elif choice == "3":
+        market(player)
+    elif choice == "4":
+        player.display_stats()
+        main_menu(player)
+    elif choice == "5":
+        sys.exit()
+    else:
+        print("invalid input.")
 
 
-def add_to_notecard():
-    notecard1 = input("Note card 1 entry: ")
-    added_notecards.append(notecard1)
+def main():
+    player_name = input("What is your name?: ")
+    player = Player(player_name)
+    # adding items to lyers inv
+    intro_menu(player)
+
+    main_menu(player)
 
 
-main_menu()
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.coins = 0
+        self.inventory = []
+
+    def display_stats(self):
+        print("-----------------------")
+        print({self.name})
+        print({self.coins})
+        print("Inventory:")
+        for item in self.inventory:
+            print(f"{item.name}: {item.value} coins")
+        print("-----------------------")
+
+
+# Zones
+
+
+def farm(player):
+    print("you walk to the farm...")
+    choice = input("do you want to farm or leave?: ")
+    if choice.lower() == "farm":
+        player.inventory.append(wheat)
+    elif choice.lower() == "leave":
+        main(player)
+    main_menu(player)
+
+
+def woods():
+    pass
+
+
+def market():
+    pass
+
+
+if __name__ == "__main__":
+    main()
