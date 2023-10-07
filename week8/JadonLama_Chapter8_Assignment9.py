@@ -10,6 +10,7 @@ def results():
     print(f"Vowels: {vowel_counter(answer)}")
     print(f"Consonants: {consonant_counter(answer)}")
     print("===================")
+    # returning to the main function after the results function completes.
     main()
 
 
@@ -44,15 +45,20 @@ def consonant_counter(word):
     return c_total
 
 
+# main function for the program.
 def main():
+    # menu features
     print("Main menu")
     print("1. Vowel and Consonant Counter")
     print("2. Exit Program")
+    # choice for the user to make concerning the menu
     choice = input("Enter a choice: ")
     if choice == "1":
         results()
     elif choice == "2":
+        # exit the program
         sys.exit()
+    # catching incorrect inputs
     else:
         print("Invalid Input.")
         main()
@@ -61,13 +67,3 @@ def main():
 # calling the main function
 if __name__ == "__main__":
     main()
-
-
-# could be like this with arguments
-# if you did not use an input for word
-# print(vowel_counter("banana"))
-
-
-# NOTES
-# I think that what is in the main function should be its own function and the results should
-# just be in the main function.
