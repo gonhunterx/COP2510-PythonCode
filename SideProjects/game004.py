@@ -6,6 +6,14 @@ import random
 # you can gain money and add items to your storage.
 
 
+class Item:
+    def __init__(self, name):
+        self.name = name
+
+
+ball = Item("ball")
+
+
 class Person:
     def __init__(self, name, age):
         self.name = name
@@ -16,22 +24,23 @@ class Person:
         self.storage = []
 
     def display_stats(self):
-        print("==================")
+        print("=========Stats=========")
         print(f"Name: {self.name}")
         print(f"Age: {self.age}")
         print(f"Health: {self.health}")
         print(f"Bank Value: {self.money}")
         print(f"Popularity: {self.popularity}")
+        print("Inventory:")
         for item in self.storage:
             if self.storage == [""]:
-                print("empty")
+                print("[empty]")
             else:
-                print({item})
+                print(f"- {item.name}")
 
 
 # is there a way i could make a rolling system to help determine outcomes of perticular situations to make ther emore variance.
 def main_menu(person):
-    print("------Main Menu------")
+    print("========Main Menu========")
     print("1. Continue")
     print("2. Exit Game")
     print("3. View Stats")
@@ -43,6 +52,7 @@ def main_menu(person):
             five_to_ten(person)
         elif person.age in range(10, 15):
             pass
+
     elif main_menu_choice == "2":
         sys.exit()
     elif main_menu_choice == "3":
@@ -100,6 +110,8 @@ def five_to_ten(person):
     five_choice = input("Input(yes or no): ")
     if five_choice.lower() == "yes":
         print("You walk over to him and he looks sad...")
+        print("Your presence makes him happier and he gives you a little ball!")
+        person.storage.append(ball)
         person.age += 3
         person.health += 2
         main_menu(person)
@@ -136,3 +148,7 @@ main()
 def mall(person):
     if person.age > 50:
         print("The mall is being torn down...")
+
+
+# do the increments needs to be lower? can there just be a fucntion full of questions?
+# one to organize and then just call once a certain age is hit?
