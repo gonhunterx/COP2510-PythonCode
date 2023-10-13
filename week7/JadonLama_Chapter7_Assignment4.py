@@ -25,6 +25,8 @@ def displaying_data(main_list):
     print(f"The highest value is: {highest_value}")
     print(f"The total value is: {total_value}")
     print(f"The average value is: {average_value}")
+    print("===============================")
+
     # creating a choice for the user to return to the main function and enter more data.
     choice = input("Do you want to go again?(yes or no): ")
     # logic for the choice
@@ -50,4 +52,5 @@ def main():
 
 
 # calling the main function.
-main()
+if __name__ == "__main__":
+    main()

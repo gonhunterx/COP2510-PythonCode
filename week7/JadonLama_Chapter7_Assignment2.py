@@ -9,7 +9,10 @@ def main():
     for index in range(7):
         # passing in the random numbers we generate at each index of the list.
         numbers[index] = random.randint(0, 60)
-    print(sum(numbers))
+    # outside of the for loop we print all numbers generated at each
+    # index for numbers. 7 is specified for the amount of numbers in
+    # the numbers array will contain
+    print(numbers)
 
 
 main()
