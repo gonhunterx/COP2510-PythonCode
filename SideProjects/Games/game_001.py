@@ -88,7 +88,7 @@ def castle_courtyard(player):
         elif player_cy_choice == "2":
             gambling_section(player)
         elif player_cy_choice == "3":
-            pass
+            auction(player)
         elif player_cy_choice == "4":
             print("You exit the courtyard.")
             main_menu(player)
@@ -161,7 +161,7 @@ def gambling_section(player):
     if menu_input == "1":
         gamble_50_50(player)
     elif menu_input == "2":
-        # russian_roulette()
+        russian_roulette(player)
         pass
     elif menu_input == "3":
         main_menu(player)
@@ -171,15 +171,28 @@ def gambling_section(player):
 
 def gamble_50_50(player):
     print("You roll...")
-    roll = random.randint(1, 101)
+    roll = random.randint(1, 100)
     print(roll)
     if roll >= 50:
         print("You win! +1 gold")
         player.gold += 1
-        return player
+        gambling_section(player)
     else:
         print("Better luck next time...")
-        return player
+        gambling_section(player)
+
+
+# Russian roulette
+def russian_roulette(player):
+    losing_game = 1
+    initiate_game = random.randint(1, 6)
+    if initiate_game == losing_game:
+        print("You lost...")
+        sys.exit()
+    else:
+        print("You survived! +5g")
+        player.gold += 5
+        gambling_section(player)
 
 
 # Auction House
