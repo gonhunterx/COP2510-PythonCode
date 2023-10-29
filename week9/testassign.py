@@ -72,7 +72,7 @@ def view_avaliable_classes():
 
 
 # main menu that returns a choice taken from an input the user enters
-def main_menu():
+def options_menu():
     print(
         """
 =========================
@@ -96,15 +96,13 @@ def create_user():
     return user
 
 
-def main():
-    user_created = False
+def main(user_created=False):
     # Printing inital message
     print("Computer Science Class Organizer")
     print("=========================")
-    if user_created == False:
+    if not user_created:
         create_user()
-
-    user_created = True
+        user_created = True
     # getting the username from the user to pass through the User class
     # if not user_created:
     #     username = input("Please enter a username: ")
@@ -113,10 +111,12 @@ def main():
     #     user = User(username)
     # print(user.add_class("CS101"))
 
+
+def main_menu():
     # while loop so keep manipulating the user object
     while True:
         # creating a variable that contains the returned value of the main menu function
-        choice = main_menu()
+        choice = options_menu()
         if choice == "1":
             # call the view classes function
             view_avaliable_classes()
@@ -124,13 +124,13 @@ def main():
             # get the data to pass into the add class method from the User class
             data = input("Input class name: ")
             print(data)
-            user.add_class(data)
+            user = user.add_class(data)
         elif choice == "3":
             # call the user objects view added classes method
-            user.view_added_classes()
+            user = user.view_added_classes()
         elif choice == "4":
             # call the user objects remove classes method
-            user.remove_classes()
+            user = user.remove_classes()
         elif choice.lower() == "q":
             # allow the user to break out of the loop
             break
