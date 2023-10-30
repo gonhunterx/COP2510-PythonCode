@@ -5,6 +5,7 @@ class Person:
         self.__phone_number = phone_number
         # __ makes the attribute private
 
+    # Mutator methods
     def set_name(self, name):
         self.__name = name
 
@@ -14,6 +15,7 @@ class Person:
     def set_phone_number(self, phone_number):
         self.__phone_number = phone_number
 
+    # Accessor methods
     def get_name(self):
         return self.__name
 
@@ -32,12 +34,14 @@ class Customer(Person):
         self.__customer_number = customer_number
         self.__mailing_list = mailing_list
 
+    # Mutator methods
     def set_customer_number(self, customer_number):
         self.__customer_number = customer_number
 
     def set_mailing_list(self, mailing_list):
         self.__mailing_list = mailing_list
 
+    # Accessor methods
     def get_customer_number(self):
         return self.__customer_number
 
@@ -59,11 +63,8 @@ def main():
         mailing_list = True
     else:
         mailing_list = False
-    customer = Person()
     # create an instance of the Customer class
-    my_customer = customer.Customer(
-        name, address, phone_number, customer_number, mailing_list
-    )
+    my_customer = Customer(name, address, phone_number, customer_number, mailing_list)
 
     # display the data
     print("Customer Information")
@@ -71,3 +72,7 @@ def main():
     print("Name:", my_customer.get_name())
     print("Address:", my_customer.get_address())
     print("Phone:", my_customer.get_phone_number())
+    print("Mailing list:", my_customer.get_mailing_list())
+
+
+main()
