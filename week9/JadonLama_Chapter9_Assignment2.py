@@ -34,6 +34,7 @@ def main():
     print(f"You had {incorrect} incorrect responses.")
 
 
+# function containing the dictionary 'sc' which stands for state capitals
 def state_cap_dictionary():
     sc = {
         "Alabama": "Montgomery",
@@ -90,5 +91,6 @@ def state_cap_dictionary():
     return sc
 
 
+# calling just the main function
 if __name__ == "__main__":
     main()
