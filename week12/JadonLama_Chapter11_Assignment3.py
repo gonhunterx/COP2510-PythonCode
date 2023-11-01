@@ -53,6 +53,7 @@ class Customer(Person):
 
 
 def main():
+    # get customer information.
     name = input("Enter your name: ")
     address = input("Enter your address: ")
     phone_number = input("Enter your phone number: ")
@@ -72,6 +73,7 @@ def main():
     print("Name:", my_customer.get_name())
     print("Address:", my_customer.get_address())
     print("Phone:", my_customer.get_phone_number())
+    print("Customer Number:", my_customer.get_customer_number())
     print("Mailing list:", my_customer.get_mailing_list())
 
 
