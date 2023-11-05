@@ -5,6 +5,7 @@
 class Pet:
     # initalizing the Pet class with 3 parameters.
     def __init__(self, name, animal_type, age):
+        # creating private attributes for the pet class that can be set and retrieved.
         self.__name = name
         self.__animal_type = animal_type
         self.__age = age
@@ -32,8 +33,8 @@ def main():
     while True:
         # try except statement for error handling and testing
         try:
-            # creating variables to pass to the class and create an object
             print("Enter your pet's attributes")
+            # creating variables to pass to the class and create an object
             pet_name = input("Enter your pet's name: ")
             pet_type = input("Enter your pet's type: ")
             pet_age = input("Enter your pet's age: ")
