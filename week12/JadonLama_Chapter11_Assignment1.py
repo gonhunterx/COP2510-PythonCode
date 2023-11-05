@@ -49,7 +49,7 @@ def main():
     elif shift_num == 2:
         shift_num == "Night"
     else:
-        return "Invalid input. "
+        return "Invalid input."
 
     print("Employee Information:")
     print("-" * 20)
