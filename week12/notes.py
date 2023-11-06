@@ -2,7 +2,7 @@
 
 # IS A relationship exists when one object is a
 # specalized version of another object
-# eg. superclass(insects) -> subclasses(bee or grasshopper)
+# eg. superclass(insects) -> subclasses()
 
 
 # When you create a subclass it reduces the total amount of
