@@ -1,5 +1,4 @@
 import tkinter as tk
-import tkinter.messagebox
 
 
 class MyGUI:
@@ -54,9 +53,6 @@ class MyGUI:
         self.name_value.set("Jadon Lama")
         self.street_value.set("43 west main rd")
         self.csz_value.set("Cortez, FL 14850")
-
-    # def do_something(self):
-    #     tkinter.messagebox.showinfo("Reponse", "Thanks for clicking the button.")
 
 
 my_gui = MyGUI()
